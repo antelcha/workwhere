@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 struct PlaceAnnotation: Identifiable {
     let id = UUID()
     let place: PlacePosts

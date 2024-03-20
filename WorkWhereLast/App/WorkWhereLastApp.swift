@@ -27,13 +27,15 @@ struct WorkWhereLastApp: App {
                             Text("Places")
                         }
                     }
-                MapView()
-                    .tabItem {
-                        VStack {
-                            Image(systemName: "map")
-                            Text("All places")
-                        }
+                NavigationView {
+                    MapView()
+
+                }.tabItem {
+                    VStack {
+                        Image(systemName: "map")
+                        Text("All places")
                     }
+                }
 
                 if authManager.currentUser.userId != nil {
                     NavigationView {
@@ -60,6 +62,26 @@ struct WorkWhereLastApp: App {
                             VStack {
                                 Image(systemName: "person.fill")
                                 Text("Profile")
+                            }
+                        }
+                }
+
+                if authManager.currentUser.userId != nil {
+                    NavigationView {
+                        AddPostView()
+
+                    }.tabItem {
+                        VStack {
+                            Image(systemName: "plus")
+                            Text("Add Post")
+                        }
+                    }
+                } else {
+                    SignInView()
+                        .tabItem {
+                            VStack {
+                                Image(systemName: "plus")
+                                Text("Add Post")
                             }
                         }
                 }

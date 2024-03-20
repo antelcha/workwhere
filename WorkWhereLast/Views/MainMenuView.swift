@@ -9,12 +9,17 @@ import Foundation
 import SwiftUI
 
 struct MainMenuView: View {
-    @ObservedObject var viewModel = MainMenuViewModel()
+    @StateObject var viewModel = MainMenuViewModel()
     @State private var showSignIn = false
 
     var body: some View {
         NavigationView {
             ScrollView {
+                
+                if (viewModel.places.count == 0) {
+                    Text("No avaliable places yet.")
+                }
+                
                 ForEach(viewModel.places, id: \.id) { model in
 
                     NavigationLink(destination:
@@ -27,38 +32,23 @@ struct MainMenuView: View {
 
                     }.buttonStyle(PlainButtonStyle())
                 }.id(UUID())
+                    .padding(.horizontal)
 
                 Spacer()
             }
-            .padding(.horizontal)
+          
             .navigationTitle(Text("All places"))
             .sheet(isPresented: $showSignIn, content: {
                 SignInView()
             })
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    if (viewModel.authManager.isSignedIn) {
-                        NavigationLink {
-                            AddPostView()
-                        } label: {
-                            Image(systemName: "plus")
-                        }
-
-                    }
-                    else {
-                        Button {
-                            showSignIn = true
-                        } label: {
-                            Image(systemName: "plus")
-                        }
-                    }
-                    
-                }
+            .task {
+                
+                await self.viewModel.fetchPosts()
+                
             }
+            
         }
 
-        .task {
-            //            await viewModel.fetchPosts()
-        }
+        
     }
 }

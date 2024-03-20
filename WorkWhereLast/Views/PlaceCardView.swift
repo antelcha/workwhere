@@ -25,7 +25,7 @@ struct PlaceCardView: View {
                     image
                         .resizable()
                         .frame(height: 250)
-                        .scaledToFill()
+                        .scaledToFit()
                 } placeholder: {
                     Rectangle()
                         .frame(height: 250)

@@ -10,7 +10,7 @@ import Foundation
 @MainActor
 class MainMenuViewModel: ObservableObject {
     @Published var places: [PlacePosts] = [
-        PlacePosts(id: "aaa", userId: "aaa", placeTitle: "Mustafa", placeDescription: "Yok", location: LocationModel(latitude: 0, longitute: 0, title: "aaa", city: "aaa", district: "aaaaa"), imageURL: "https://fastly.picsum.photos/id/198/300/200.jpg?hmac=tklm6CzIgRqZX66BjwFARM05cLtx4iUCSwzmz75qRzA", userName: "Mustafa Girign"),
+       
     ]
 
     let firestoreManager = FirestoreManager.shared
@@ -25,8 +25,13 @@ class MainMenuViewModel: ObservableObject {
             return
         }
         if posts.count == places.count { return }
-
-        places = posts
+        print(posts)
+        
+        Task {
+            self.places = posts
+        }
+        objectWillChange.send()
+        
     }
 
     func getDetailedModel(id: String) async -> PlacePosts? {

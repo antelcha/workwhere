@@ -37,6 +37,27 @@ struct SettingsView: View {
                     }
                 }
                 Section(header: Text("Account")) {
+                    
+                    
+                    
+                    
+                    NavigationLink {
+                        ChangeNameView()
+                    } label: {
+                        Text("Change name")
+                    }
+                    
+                    
+                    NavigationLink {
+                        EditPostsView()
+                    } label: {
+                        Text("Edit posts")
+                    }
+                    
+                    
+
+                    
+                    
                     Button(action: {
                         showingConfirmation1 = true // Show the confirmation dialog
                     }, label: {

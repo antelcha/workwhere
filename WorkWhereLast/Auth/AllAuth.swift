@@ -105,28 +105,28 @@ public final class AuthManager: ObservableObject {
         }
         
                    
-//        if value.isNewUser == true {
+        if value.isNewUser == true {
+
+
+            let user = UserModel(id: value.user.uid, email: value.user.email ?? "",  name: value.user.displayName ?? "", posts: [])
+
+                       let data: [String: Any] = [
+                           "id": user.id,
+                           "email": user.email,
+                           
+                           "name": user.name,
+                           "posts": user.posts,
+                       ]
+
+                       db.collection("user").addDocument(data: data) { error in
+                           if let error = error {
+                               print("Error adding document: \(error)")
+                           } else {
+                               print("Document added successfully")
+                           }
+                       }
+                   }
 //
-//
-//            let user = UserModel(id: value.user.uid, email: value.user.email ?? "",  name: value.user.displayName ?? "", posts: [])
-//
-//                       let data: [String: Any] = [
-//                           "id": user.id,
-//                           "email": user.email,
-//                           
-//                           "name": user.name,
-//                           "posts": user.posts,
-//                       ]
-//
-//                       db.collection("user").addDocument(data: data) { error in
-//                           if let error = error {
-//                               print("Error adding document: \(error)")
-//                           } else {
-//                               print("Document added successfully")
-//                           }
-//                       }
-//                   }
-////
         
         DispatchQueue.main.async {
             self.isSignedIn = true
@@ -152,28 +152,28 @@ public final class AuthManager: ObservableObject {
         
         
                    
-//        if value.isNewUser == true {
-//
-//
-//            let user = UserModel(id: value.user.uid, email: value.user.email ?? "", name: value.user.displayName ?? UUID().uuidString, posts: [])
-//
-//                       let data: [String: Any] = [
-//                           "id": user.id,
-//                           "email": user.email,
-//                           
-//                           "name": user.name,
-//                           "posts": user.posts,
-//                       ]
-//
-//            
-//                       db.collection("user").addDocument(data: data) { error in
-//                           if let error = error {
-//                               print("Error adding document: \(error)")
-//                           } else {
-//                               print("Document added successfully")
-//                           }
-//                       }
-//                   }
+        if value.isNewUser == true {
+
+
+            let user = UserModel(id: value.user.uid, email: value.user.email ?? "", name: value.user.displayName ?? UUID().uuidString, posts: [])
+
+                       let data: [String: Any] = [
+                           "id": user.id,
+                           "email": user.email,
+                           
+                           "name": user.name,
+                           "posts": user.posts,
+                       ]
+
+            
+                       db.collection("user").addDocument(data: data) { error in
+                           if let error = error {
+                               print("Error adding document: \(error)")
+                           } else {
+                               print("Document added successfully")
+                           }
+                       }
+                   }
         
         DispatchQueue.main.async {
             self.isSignedIn = true

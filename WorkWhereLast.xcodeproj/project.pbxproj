@@ -46,6 +46,8 @@
 		935522562BAA41A4000A489D /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935522552BAA41A4000A489D /* SignInView.swift */; };
 		935522592BAA4555000A489D /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935522582BAA4555000A489D /* UserProfileView.swift */; };
 		9355225B2BAA4739000A489D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9355225A2BAA4739000A489D /* SettingsView.swift */; };
+		9355225D2BAAE3F9000A489D /* CreateProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9355225C2BAAE3F9000A489D /* CreateProfileView.swift */; };
+		9355225F2BAAED9E000A489D /* EditPostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9355225E2BAAED9E000A489D /* EditPostsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +87,8 @@
 		935522572BAA43B2000A489D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		935522582BAA4555000A489D /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		9355225A2BAA4739000A489D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		9355225C2BAAE3F9000A489D /* CreateProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileView.swift; sourceTree = "<group>"; };
+		9355225E2BAAED9E000A489D /* EditPostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPostsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				9355220A2BA9FF36000A489D /* MainMenuView.swift */,
+				9355225E2BAAED9E000A489D /* EditPostsView.swift */,
+				9355225C2BAAE3F9000A489D /* CreateProfileView.swift */,
 				9355225A2BAA4739000A489D /* SettingsView.swift */,
 				935522552BAA41A4000A489D /* SignInView.swift */,
 				9355224B2BAA3E7C000A489D /* Toast.swift */,
@@ -318,6 +324,7 @@
 				935522232BAA081F000A489D /* MapView.swift in Sources */,
 				935522292BAA08BB000A489D /* PlaceAnnotationView.swift in Sources */,
 				9355220B2BA9FF36000A489D /* MainMenuView.swift in Sources */,
+				9355225F2BAAED9E000A489D /* EditPostsView.swift in Sources */,
 				935521FA2BA9FF0B000A489D /* WorkWhereLastApp.swift in Sources */,
 				9355222F2BAA0902000A489D /* PlaceAnnotationModel.swift in Sources */,
 				935522312BAA0927000A489D /* PlaceDetailView.swift in Sources */,
@@ -337,6 +344,7 @@
 				935522362BAA14FB000A489D /* UserModel.swift in Sources */,
 				9355224E2BAA3EDD000A489D /* ImagePicker.swift in Sources */,
 				935522592BAA4555000A489D /* UserProfileView.swift in Sources */,
+				9355225D2BAAE3F9000A489D /* CreateProfileView.swift in Sources */,
 				935522542BAA3FC3000A489D /* SelectLocationFromMapView.swift in Sources */,
 				9355224C2BAA3E7C000A489D /* Toast.swift in Sources */,
 				935522272BAA0832000A489D /* MapViewModel.swift in Sources */,

@@ -70,7 +70,7 @@ class AddPostViewModel: ObservableObject {
         }
         guard let userid = authManager.currentUser.userId else {return}
         
-        let post = AddPostModel(id: UUID().uuidString, userId: userid , placeTitle: title, placeDescription: description, location: location!, data: [selectedImages?.jpegData(compressionQuality: 1) ?? Data()])
+        let post = AddPostModel(id: UUID().uuidString, userId: userid , placeTitle: title, placeDescription: description, location: location!, data: selectedImages?.jpegData(compressionQuality: 0.01) ?? Data(), userName: authManager.currentUser.profile?.displayName ?? "")
         
        
         do {
